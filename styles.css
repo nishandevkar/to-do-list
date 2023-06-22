@@ -1,0 +1,31 @@
+
+.inputArea{
+    margin: 0 auto;
+    width: 90%;
+    height: 20rem;
+    padding: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+.inputText{
+    padding: 2rem;
+    width: 80%;
+    border-radius: 1rem;
+}
+.inputButton{
+    font-family: "Montserrat", sans-serif;
+    margin: 1rem;
+    border-radius: 8px;
+}
+::-webkit-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+}
+:-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+}
+::-moz-placeholder {
+    font-family: "Montserrat", sans-serif;
+}
+:-ms-input-placeholder {
+    font-family: "Montserrat", sans-serif;
+}
