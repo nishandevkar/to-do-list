@@ -11,15 +11,19 @@
     <title>To Do List App</title>
 </head>
 <body>
-    <div class="inputArea">
-        <form class="toDoForm">
-            <input type="text" class = "inputText" placeholder=" Let's do something ... 🐱" > 
+    <div class="inputWrapper" onsubmit="return">
+        <!-- <form class="toDoForm" > -->
+            <input type="text" class = "inputText" placeholder=" Let's do something ... 🐱" onsubmit="getInput()"> 
             <div class="buttonWrapper">
                 <input type="button" name="addButton" class="inputButton" value="Add To-Do">
                 <input type="button" class="inputButton" value="Cancel">
             </div>
             
-        </form>
+        <!-- </form> -->
+
+        <div class="taskList">
+            <div class="task"></div>
+        </div>
         
     </div>
 
