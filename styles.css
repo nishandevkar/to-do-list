@@ -1,55 +1,7 @@
-
-.inputWrapper{
-    margin: 0 auto;
-    width: 90%;
-    height: 20rem;
-    padding: 2rem;
-    text-align: center;
-    justify-content: center;
-}
-.inputText{
-    padding: 2rem;
-    width: 80%;
-    border-radius: 1rem;
-    font-size: 20px;
-    border: 1px solid olive
-}
-.inputText:hover{
-    box-shadow: 0px 0px 10px 5px beige;
-    outline: none;
-}
-.inputText:focus{
-    border: 2px solid olive;
-    outline: none;
-    border: 2px solid rgb(118, 118, 232);
-}
-.inputButton{
-    font-family: "Montserrat", sans-serif;
-    margin: 1rem;
-    background-color: beige;
-    border-radius: 2rem;
-    border: 1px solid olive;
-    padding: 1rem;
-    box-shadow: 0px 0px 0px 0px rgba(111, 109, 109,0.5);
-    font-weight: bolder;
-}
-.inputButton:hover{
-    margin: 1rem;
-    background-color: #5f7a10;
-    color: #fff;
-    transition: .2s ease-in-out;
-    box-shadow: 2px 4px 0px 0px rgba(111, 109, 109,0.5)
-}
-
-::-webkit-input-placeholder {
-    font-family: "Montserrat", sans-serif;
-}
-:-moz-placeholder {
-    font-family: "Montserrat", sans-serif;
-}
-::-moz-placeholder {
-    font-family: "Montserrat", sans-serif;
-}
-:-ms-input-placeholder {
-    font-family: "Montserrat", sans-serif;
+/* Strike through text decoration. 
+ * toggled when the list item is clicked
+ */
+.strike{
+    text-decoration: line-through;
+    color: rgb(215, 157, 157);
 }
