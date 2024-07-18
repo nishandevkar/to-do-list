@@ -6,16 +6,11 @@ import {
 	FormLabel,
 	Text,
 	Button,
-	FormErrorMessage,
 } from "@chakra-ui/react";
 import { useForm, FieldValues } from "react-hook-form";
 
 const App = () => {
-	const {
-		handleSubmit,
-		register,
-		formState: { errors },
-	} = useForm();
+	const { handleSubmit, register } = useForm();
 
 	const onSubmit = (data: FieldValues) => {
 		console.log(data);
