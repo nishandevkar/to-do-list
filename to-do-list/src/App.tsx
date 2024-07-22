@@ -4,16 +4,23 @@ import {
 	Heading,
 	Center,
 	FormLabel,
-	Text,
 	Button,
+	Text,
+	HStack,
+	Icon,
+	Box,
+	Checkbox,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import { useForm, FieldValues } from "react-hook-form";
+import { MdDelete } from "react-icons/md";
 
 const App = () => {
 	const { handleSubmit, register } = useForm();
-
+	const [toDoList, setToDoList] = useState<string[]>([]);
 	const onSubmit = (data: FieldValues) => {
-		console.log(data);
+		if (!toDoList.includes(data.name))
+			setToDoList([...toDoList, data.name]);
 	};
 	return (
 		<div>
@@ -21,7 +28,7 @@ const App = () => {
 				<Heading fontSize="3xl">To Do List</Heading>
 			</Center>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<FormControl>
+				<FormControl paddingX={10}>
 					<FormLabel>Add a new item</FormLabel>
 					<Input
 						id="name"
@@ -34,12 +41,55 @@ const App = () => {
 							},
 						})}
 					/>
+
+					<Button mt={4} colorScheme="teal" type="submit">
+						Submit
+					</Button>
 				</FormControl>
-				<Button mt={4} colorScheme="teal" type="submit">
-					Submit
-				</Button>
 			</form>
-			<Text></Text>
+			<Box paddingX={28} paddingY={50}>
+				<ul className="list-group">
+					{toDoList.map((eachListItem) => (
+						<li
+							className="list-group-item list-group-item-secondary"
+							key={toDoList.indexOf(eachListItem)}
+							data-bs-theme="dark"
+						>
+							<HStack
+								justifyContent={"space-between"}
+								border={2}
+								borderColor={"black"}
+							>
+								<Checkbox>
+									<Text
+										paddingTop={3.5}
+										paddingLeft={3}
+										fontWeight={400}
+										textDecoration={"line-through"}
+									>
+										{eachListItem}
+									</Text>
+								</Checkbox>
+								<Button
+									type="button"
+									boxSize={6}
+									backgroundColor={"black"}
+									onClick={() => {
+										setToDoList(
+											toDoList.filter(
+												(eachTodo) =>
+													eachTodo != eachListItem
+											)
+										);
+									}}
+								>
+									<Icon as={MdDelete}></Icon>
+								</Button>
+							</HStack>
+						</li>
+					))}
+				</ul>
+			</Box>
 		</div>
 	);
 };
